@@ -403,9 +403,9 @@ Advances one or more worldlines matching the target:
    - Create child Radiant
    - Parent remains in graph (non-destructive)
 3. Update Now: remove matched parents, add their children
-4. **Staggered Now:** Unmatched Radiants remain at their current positions
+4. **Natural Asynchrony:** Unmatched Radiants remain at their current positions
 
-**Result:** Asynchronous growth—matched worldlines advance while others remain stationary. This creates **differential tau values** across the wavefront (Staggered Now).
+**Result:** Asynchronous growth—matched worldlines advance while others remain stationary. This creates **differential tau values** across the wavefront (Natural Asynchrony).
 
 **Use case:** Focused exploration of one or more perspectives
 
@@ -756,7 +756,7 @@ No global provider registry—each Prime is self-contained. Secrets are resolved
 
 ;; 3. Continue just Sage's thread (Targeted Mode)
 (act "Expand on that" :target "sage")
-;; Now = [radiant-sage-2, radiant-engineer-1, radiant-poet-1]  ← Staggered Now
+;; Now = [radiant-sage-2, radiant-engineer-1, radiant-poet-1]  ← Natural Asynchrony
 
 ;; 4. Navigate back to earlier state
 (move -1)
@@ -764,9 +764,6 @@ No global provider registry—each Prime is self-contained. Secrets are resolved
 
 ;; 5. Branch Sage in a different direction
 (act "What about entropy?" :target "sage")
-;; Warning: radiant-sage-1 has 1 descendant (radiant-sage-2)
-;; Confirm erasure? (yes)
-;; radiant-sage-2 erased
 ;; Now = [radiant-sage-1', radiant-engineer-1, radiant-poet-1]
 
 ;; 6. Collapse all three perspectives (Consensus Mode)
@@ -1001,7 +998,6 @@ The operational interface is a Universal REPL with three entry points:
 | **Density** | Token budget usage as percentage of context window limit |
 | **Foreign Universe** | Imported ActionGraph from external source |
 | **Universal Bridge** | Observe operation that merges multi-root spacetimes |
-| **Causal Erasure** | Permanent removal of descendants when mutating non-tip Radiants |
 | **Dimensional Collapse** | Compression of commit content (4D→3D→2D→1D) based on causal distance |
 | **Entanglement** | Correlation between Radiants that reduces individual uncertainty |
 | **Entanglement Shield** | Restriction to temporal navigation (no targeted branch navigation) |
