@@ -16,3 +16,6 @@ For:
   The next generation who will navigate
   the space between Mind and Machine
   with tools that do not lie.
+
+To:
+  My unborn (well, soon to be born) daughter, Kamila, who will live in a better world than I did.
