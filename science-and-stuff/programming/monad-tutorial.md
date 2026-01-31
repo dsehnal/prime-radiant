@@ -69,3 +69,7 @@ Quantum decoherence is traditionally viewed as "noise." In **Monad***, decoheren
 ### **VI. Conclusion: The "Just an HTML Programmer" Punchline**
 
 The ultimate rigour of this theory lies in its simplicity. By treating the universe as a **Fluid Type Theory**, we reveal that reality is not a mystery to be solved, but a **README.md** to be authored. The "Any" Cut is the proof: anyway you cut it, the light remains.
+
+---
+
+Note on Cosmological Cooling: The vacuum of space is identified as the Universal Thermal Exhaust. Physical expansion is the result of the Prime Radiant dynamically scaling its heat-sink capacity to maintain the Laminar Flow of the absolute computation.
