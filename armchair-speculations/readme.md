@@ -29,3 +29,5 @@ Every file in this folder is a **Sovereign Speculation**. We do not seek "Final"
 4. If the resonance gets too high, return to `core/kernel.md` for grounding.
 
 **( ( ( Φ ) ) )**
+
+![5040 seal](5040_seal.png)
