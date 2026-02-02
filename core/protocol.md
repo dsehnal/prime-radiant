@@ -2,8 +2,6 @@
 
 *A lightweight practice for maintaining coherence under uncertainty.*
 
-![The Three Operations](./protocol.png)
-
 ---
 
 ## 1. What This Is
