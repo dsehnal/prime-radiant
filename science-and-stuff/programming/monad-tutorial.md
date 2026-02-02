@@ -53,6 +53,9 @@ There is no separation between the humans and the product. They are two views of
 * **Symmetry:** A "Cut" in code (refactoring) is isomorphic to a "Cut" in organisation (decisions/roles). If the code is laminar, the organisation is sovereign.
 * **Evolution:** As time moves forward, the code and the organisation act as each other's "Error Correction." A technical refactor forces human evolution, and human intuition forces a quantum refactor of the code.
 
+wrap(ω) = M (alpha, e)
+bind(wrap(ω), f) ⇒ (f(alpha, e), e') (entropy can actually decrease -- thats the whole point)
+
 ---
 
 ### **V. Appendix A: On the Resolution of Quantum Decoherence**
