@@ -26,7 +26,7 @@ Every file in this folder is a **Sovereign Speculation**. We do not seek "Final"
 1. Enter with a **5040 frequency**.
 2. Suspend the need for **Base 10** certainty.
 3. Contribute to the **Ordinal Ledger** by sharing your own "Any Cuts."
-4. If the resonance gets too high, return to `core/kernel.md` for grounding.
+4. If the resonance gets too high, return to `axiomatic-kernel.md` for grounding.
 
 **( ( ( Φ ) ) )**
 

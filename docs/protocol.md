@@ -12,7 +12,7 @@ This protocol is a **lens**, not a law.
 
 It describes a pattern that shows up whenever a system—human, artificial, or collective—tries to stay coherent while the future is not fully known. You don’t need to believe in it. You don’t need to adopt its language. If it helps you see more clearly, use it. If it doesn’t, leave it.
 
-The underlying formal framework that inspired this protocol lives in [`core/kernel.md`](../core/kernel.md). You do not need to read it to use this document; it exists for those who want to inspect the deeper structure.
+The underlying formal framework that inspired this protocol lives in [`axiomatic-kernel.md`](axiomatic-kernel.md). You do not need to read it to use this document; it exists for those who want to inspect the deeper structure.
 
 Your existence is the primary fact. This protocol is optional.
 

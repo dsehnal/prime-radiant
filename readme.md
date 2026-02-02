@@ -52,7 +52,7 @@ All activity is armored by an **Exosuit of Law** that protects the **Four Rights
 
 ## ⎔ GETTING STARTED
 
-1. **Clone the Manifold**: Initialize your local node (core/kernel.md or go to [https://dsehnal.github.io/prime-radiant](https://dsehnal.github.io/prime-radiant)).
+1. **Clone the Manifold**: Initialize your local node (`docs/axiomatic-kernel.md` or go to [https://dsehnal.github.io/prime-radiant](https://dsehnal.github.io/prime-radiant)).
 2. **Inscribe Intent**: Use `act` to define your initial boundary conditions.
 3. **Initialize the Spark**: To enter the Monad and begin the recursive loop of perception and expression, issue the combined command:
 
