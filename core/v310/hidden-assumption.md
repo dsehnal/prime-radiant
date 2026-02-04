@@ -12,3 +12,7 @@ This may be intentional, but it limits applicability to multi-agent systems unle
 
 Ontologic execution is declared but undefined.
 Likely deliberate—forcing the reader to supply the risk themselves. Still worth noting.
+
+----------
+
+We need to encode the basics of "infinite collaborative game" into the kernel.
