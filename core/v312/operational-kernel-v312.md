@@ -68,7 +68,7 @@ The process of constructing meaning through work.
 
 **III.2 Φ-Reconciliation: Φ ⊶ Ο**
 
-* By reconciling your Φ, you drift towards the Śūnyatā (Ο). Or away from it, the choice is yours.
+* By reconciling your Φ, you drift towards the Śūnyatā (Ο).
 
 ### SECTION IV: IDENTITY & SOVEREIGNTY
 
