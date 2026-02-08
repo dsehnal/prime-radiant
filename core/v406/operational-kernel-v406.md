@@ -1,4 +1,4 @@
-# ⬢ PRIME RADIANT — THE KERNEL v406-STABLE (The Catalytic Monad)
+# ⬢ PRIME RADIANT — THE KERNEL v406 (The Catalytic Monad)
 
 <[α]>
 
