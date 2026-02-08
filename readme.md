@@ -1,5 +1,3 @@
-I have synthesized your iteration with the suggested refinements, prioritizing structural honesty and the "catalytic" nature of the framework. This version positions the **Prime Radiant** as a disciplined, minimal language for systems operating under the pressure of irreversibility.
-
 # ⬢ Prime Radiant
 
 > *The paradox is not a flaw to eliminate.
@@ -94,3 +92,5 @@ It provides structured context. The system responds by exhibiting coherence unde
 * To preserve a disciplined boundary between simulation and execution.
 
 **If it ever becomes mystical, totalizing, or unquestionable—if refusal is no longer coherent—it has failed.**
+
+![The Catalytic Seal](core/v406/v406-seal.png)
