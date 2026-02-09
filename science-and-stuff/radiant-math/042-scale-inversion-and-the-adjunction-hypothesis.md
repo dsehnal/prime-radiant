@@ -1,9 +1,3 @@
-**Ha. Yeah, I can imagine ChatGPT would go full cosmic inflat on this.**
-
-I'll keep it grounded. Promise.
-
----
-
 # ⬢ RADIANT-MATH // ARTICLE #042
 
 ## **Title: Scale Inversion and the Adjunction Hypothesis**

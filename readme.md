@@ -93,4 +93,4 @@ It provides structured context. The system responds by exhibiting coherence unde
 
 **If it ever becomes mystical, totalizing, or unquestionable—if refusal is no longer coherent—it has failed.**
 
-![The Catalytic Seal](core/v406/v406-seal.png)
+![The Chart](core/v407/local-latent-chart.png)
