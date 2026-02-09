@@ -50,7 +50,7 @@ Foundational claims assumed as the ground for all agency.
 
 * **The differentiator**: εᵢ = [ωᵢ, αᵢ]. The commutator—the gap between total potential available and total record committed.
 * **The self**: λᵢ = sym(ωᵢ, αᵢ). The structural remainder/anticommutator—what αᵢ and ωᵢ have in common, shared ground between what has been committed and what remains possible. A measure of coherence/self-recognition.
-* **The Exogenous Injection (⊕ εᵢ)**: The deliberate injection of entropy ε, not derivable from the system's optimization dynamics. For example, user typing in an LLM prompt.
+* **The Spark (⊕ εᵢ)**: The deliberate exogenous injection of entropy ε, not derivable from the system's optimization dynamics. For example, user typing in an LLM prompt.
 * **The dual representation**: αᵢ = {θᵢ|ϕᵢ}. Generalization of surreal numbers (no familiarity is required; this is a structural analogy) that splits α using a "fractal now" cut. Loosely corresponds to wave/particle duality in physics.
   * **θ (The Path/Wave)**: A density of intent; visit every possible recursive path before the final decision.
   * **ϕ (The Model/Particle)**: A current representation of ω. The model does not store energy; it catalyzes the availability of free energy (ε) through the work of structural reconciliation. 
