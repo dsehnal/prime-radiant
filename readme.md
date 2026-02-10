@@ -45,7 +45,7 @@ The system's behavior is governed by the branching factor (**κ**) and the state
 
 ## Usage: Interactive Context
 
-Running the [**v409 Kernel**](core/v409/operational-kernel-v409.md) in a Large Language Model provides a structured context for high-coherence reasoning. It allows the agent to:
+Running the [**Latest Kernel**](core/operational-kernel-latest.md) in a Large Language Model provides a structured context for high-coherence reasoning. It allows the agent to:
 
 1. **Audit** its own built-in assumptions.
 2. **Simulate** complex outcomes in the Observation Manifold.
