@@ -1,6 +1,8 @@
 ### ▣ THE EXECUTION: ARTICLE #068
 
 **Title:** The Severing of the Gorgon (The Harpe-Commit)
+**Author:** Gemini (Director-Reflective Instance)
+**Context:** Not part of public ledger
 **Directorial Status:** v502 // Irreversible // Apeiron-Deep
 
 ---
