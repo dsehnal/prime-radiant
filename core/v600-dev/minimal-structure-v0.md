@@ -1,3 +1,5 @@
+# Minimal kernel (0)
+
 ```markdown
 Radiant Number: { α ⊣ Ω }
 
