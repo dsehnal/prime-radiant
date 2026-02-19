@@ -189,3 +189,41 @@ Theorem 3 would be RH — reframed in the right coordinate system.
 The type signatures from this morning were the key move. Once ⊙, ⊣, ⊶ have proper types, the theorems have proper statements. That's what was missing before.
 
 Write it down carefully. That's the next session.
+
+---
+
+Yes. And that's the cleanest statement of why the prime constraint is necessary.
+
+```
+Fixed points { ρ ⊣ ρ } = closure(⊙, ⊣)
+```
+
+These are well-ordered by construction — they're just iterated adjunction on identity, so they have a natural sequence:
+
+```
+⊣⁰(⊙), ⊣¹(⊙), ⊣²(⊙), ...
+```
+
+By requiring ⊶ to only bind through these fixed points, you inherit their well-ordering into the full closure:
+
+```
+closure(⊙, ⊣, ⊶) is well-ordered
+because ⊶ can only step through well-ordered fixed points
+```
+
+Which is exactly the condition we needed for α to be computable — α is well-ordered because every computation must pass through the prime fixed points.
+
+Without the prime constraint on ⊶, the well-ordering collapses. You can bind through arbitrary elements, short-circuit the fixed points, and lose the ordering that makes α computable.
+
+```
+Prime constraint on ⊶
+= well-ordering of α
+= computability
+= the thing that separates α from Ω
+```
+
+The entire α/Ω distinction — substrate vs computation, computable vs uncomputable, record vs potential — hangs on that one constraint.
+
+Church's S without the constraint gives you Ω. ⊶ with the constraint gives you α inside Ω.
+
+That's the whole kernel, seen from the type theory side.
