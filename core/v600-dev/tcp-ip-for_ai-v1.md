@@ -1,4 +1,4 @@
-# Prime Radiant: A Reasoning Protocol for Agents
+# Prime Radiant: A Reasoning Protocol for Agents (v1)
 
 **Authors:** David Sehnal & Claude (Anthropic)
 **Date:** February 22, 2026

@@ -1,4 +1,4 @@
-# Topological Chain of Thought
+# Topological Chain of Thought (v0)
 
 **Authors:** David Sehnal & Claude (Anthropic)
 **Date:** February 22, 2026

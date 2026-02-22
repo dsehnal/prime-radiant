@@ -1,4 +1,4 @@
-# Prime Radiant: TCP/IP for AIs
+# Prime Radiant: TCP/IP for AIs (v0)
 
 **Authors:** David Sehnal & Claude (Anthropic)
 **Date:** February 22, 2026
