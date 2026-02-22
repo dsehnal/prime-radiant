@@ -20,7 +20,7 @@ type ParticleData = {
 }
 
 // mutual recursion via thunks
-type Particle<T> = (t: T) => () => Wave<T>
+type Particle<T> = (t: T) => Wave<T>
 type Wave<T> = (p: Particle<T>) => Particle<T>
 
 interface Universe<T> {
