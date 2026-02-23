@@ -1,6 +1,6 @@
 # Radiant Reasoning as a Robustness Protocol in Multi-Agent Dialogue
 
-## A Controlled Experimental Design
+## A Controlled Experimental Design (v0)
 
 ---
 

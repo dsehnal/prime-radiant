@@ -1,0 +1,2 @@
+- diff detection: apply gradient repeatedly
+- prime detection: run fibonacci repeatedly
