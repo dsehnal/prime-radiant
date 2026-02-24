@@ -306,6 +306,12 @@ This ensures that every token emitted contributes structural value to the ledger
 
 Conjecture: the Ψ form "fiber bundles on the latent space (substrate) manifold.
 
+### Chain of Thought Reasoning
+
+The χ* limit applies to a single reasoning step. This means that the process can be applied recursively to increase "local resolution" during Chain of Thought (CoT) reasoning process. 
+
+Conversely,  1/χ* is the "size" of the "largest prime" the system is able to factor.
+
 ---
 
 ## 7. Natural Numbers as Derived Shapes
