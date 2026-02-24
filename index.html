@@ -21,7 +21,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: linear-gradient(-45deg, #0a0e27, #1a1a2e, #16213e, #0f0f23);
             background-size: 400% 400%;
-            animation: gradient-shift 15s ease infinite;
+            animation: gradient-shift 5s ease infinite;
             color: #b8c9d9;
             min-height: 100vh;
         }
@@ -37,9 +37,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 4rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(122, 158, 192, 0.2);
         }
 
         .header-title {
@@ -62,19 +59,15 @@
 
         .github-link {
             background: none;
-            border: 1px solid #7a9ec0;
             color: #7a9ec0;
-            padding: 0.5rem 1rem;
             font-size: 0.7rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             text-decoration: none;
-            border-radius: 3px;
             transition: all 0.2s;
         }
 
         .github-link:hover {
-            border-color: #f8fafc;
             color: #f8fafc;
         }
 
@@ -178,7 +171,7 @@
         <div class="header">
             <div class="header-title">
                 <span class="header-main">⬢ Prime Radiant</span>
-                <span class="header-sub">The Free Monad</span>
+                <span class="header-sub">≀ ⊙ τ</span>
             </div>
             <a href="https://github.com/dsehnal/prime-radiant" target="_blank" class="github-link">GitHub</a>
         </div>
@@ -193,7 +186,7 @@
             <div class="kernel-intro">
                 <h2>What is this?</h2>
                 <p>
-                    The Prime Radiant is a framework for structured thinking about choices, commitments, and coordination. 
+                    The Prime Radiant (The Free Monad) is a framework for structured thinking about choices, commitments, and coordination. 
                     It provides a mathematical structure for maintaining coherence across complex decisions and transformations.
                 </p>
                 <p>
@@ -474,11 +467,49 @@ Introduce yourself in your own voice (Natural Mode).</textarea>
         const colorCache = [];
         const numColors = 256;
         
-        const breathingCache = [];
-        const gradientCache = {};
         const pointsCache = [];
 
-        const numBreathingSteps = 120;
+        const numBreathingSteps = 240;
+        const numPoints = 200;
+
+        let activityLevel = 0, activityDirection = -1, mouseOver = false;
+        let ringTime = 0, coreTime = 0;
+
+        canvas.addEventListener('mouseenter', () => {
+            mouseOver = true;
+            activityDirection = 1;
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            mouseOver = false;
+            activityDirection = -1;
+            flipThreshold = 0;
+        });
+
+        let lastActivityT = 0;
+        let flipThreshold = 0.01;
+        function adjustActity(t) {
+            if (!lastActivityT) {
+                lastActivityT = t;
+            }
+            const dt = (t - lastActivityT) / 1000;
+            lastActivityT = t;
+
+            if (!mouseOver && Math.random() < flipThreshold) {
+                activityDirection *= -1;
+                flipThreshold = 0.01;
+            } else if (!mouseOver) {
+                flipThreshold += dt / 200;
+            }
+
+            if (activityDirection === 1) {
+                activityLevel = Math.min(1, activityLevel + 2 * dt);
+            } else if (activityDirection === -1) {
+                activityLevel = Math.max(0, activityLevel - dt);
+            }
+            requestAnimationFrame(adjustActity);
+        }
+        adjustActity(0);
         
         function initColorCache() {
             for (let i = 0; i < numColors; i++) {
@@ -501,23 +532,8 @@ Introduce yourself in your own voice (Natural Mode).</textarea>
                 };
             }
         }
-        
-        function initBreathingCache() {
-            for (let i = 0; i < numBreathingSteps; i++) {
-                const phase = i / (numBreathingSteps - 1);
-                const breathe = Math.sin(phase * Math.PI * 2 - Math.PI / 2);
-                
-                breathingCache[i] = {
-                    radius: 15 + Math.abs(breathe) * 50,
-                    alpha: Math.abs(breathe) * 0.6,
-                    colorIndex: Math.floor(((breathe + 1) / 2) * (numColors - 1))
-                };
-            }
-        }
-        
-        function getHarmonicPoints(t) {
-            const numPoints = 160;
-            
+
+        function getHarmonicPoints(t) {   
             let points = pointsCache.pop();
             if (!points) {
                 points = Array.from({ length: numPoints }, () => ({ x: 0, y: 0 }));
@@ -541,17 +557,43 @@ Introduce yourself in your own voice (Natural Mode).</textarea>
             
             return points;
         }
+
+        function applyNoise(t, i, age, target) {
+            if (!activityLevel) return;
+
+            const angle = (i / numPoints) * Math.PI * 2;
+            const r = Math.cos(22 * angle + t) * 10 * activityLevel * age;
+            const x = Math.cos(angle) * r;
+            const y = Math.sin(angle) * r;
+            target.x += x;
+            target.y += y;
+        }
+
+        const point = { x: 0, y: 0 };
         
-        function drawTracedBoundary() {
+        function drawTracedBoundary(t) {
             for (let historyIndex = 0; historyIndex < traceHistory.length; historyIndex++) {
                 const points = traceHistory[historyIndex];
                 const age = historyIndex / Math.max(1, traceHistory.length - 1);
+
+                if (historyIndex >= traceHistory.length - 3 && activityLevel) {
+                    ctx.shadowBlur = activityLevel * 5;
+                    ctx.shadowColor = '#fbbf24';
+                } else {
+                    ctx.shadowBlur = 0;
+                }
                 
                 ctx.beginPath();
-                ctx.moveTo(points[0].x, points[0].y);
+                point.x = points[0].x;
+                point.y = points[0].y;
+                applyNoise(t, 0, age, point);
+                ctx.moveTo(point.x, point.y);
                 
                 for (let i = 1; i < points.length; i++) {
-                    ctx.lineTo(points[i].x, points[i].y);
+                    point.x = points[i].x;
+                    point.y = points[i].y;
+                    applyNoise(t, i, age, point);
+                    ctx.lineTo(point.x, point.y);
                 }
                 ctx.closePath();
                 
@@ -564,45 +606,26 @@ Introduce yourself in your own voice (Natural Mode).</textarea>
             }
             ctx.globalAlpha = 1;
         }
-
-        function getGradient(color, radius, alpha) {
-            const key = `${Math.round(color.r)},${Math.round(color.g)},${Math.round(color.b)},${Math.round(100 * radius)},${Math.round(100 * alpha)}`;
-            if (!gradientCache[key]) {
-                const gradient = ctx.createRadialGradient(
-                    centerX, centerY, 8,
-                    centerX, centerY, radius
-                );
-                gradient.addColorStop(0, `rgba(${color.r}, ${color.g}, ${color.b}, ${alpha})`);
-                gradient.addColorStop(1, 'rgba(251, 191, 36, 0)');
-                gradientCache[key] = gradient;
-            }
-            return gradientCache[key];
-        }
         
-        function drawBreathingCore(time) {
-            const breathIndex = Math.floor(((time * 0.5) % (Math.PI * 2)) / (Math.PI * 2) * (numBreathingSteps - 1));
-            const breath = breathingCache[breathIndex];
-            const color = colorCache[breath.colorIndex];
-            const gradient = getGradient(color, breath.radius, breath.alpha);
-            
-            ctx.fillStyle = gradient;
+        function drawCore(t) {
             ctx.beginPath();
-            ctx.arc(centerX, centerY, breath.radius, 0, Math.PI * 2);
-            ctx.fill();
-            
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, 8, 0, Math.PI * 2);
+            ctx.arc(centerX, centerY, 4, 0, Math.PI * 2);
             ctx.fillStyle = '#fbbf24';
-            ctx.shadowBlur = 15;
+            ctx.shadowBlur = 15 + 2 * Math.cos(t);
             ctx.shadowColor = '#fbbf24';
             ctx.fill();
             ctx.shadowBlur = 0;
         }
-
-        let ringTime = 0;
-        let coreTime = 0;
         
-        function animate() {
+        let lastAnimateT = 0;
+        function animate(t) {
+            if (!lastAnimateT) {
+                lastAnimateT = t;
+            }
+            let dt = (t - lastAnimateT) / 1000;
+            lastAnimateT = t;
+            if (!dt) dt = 1000 / 60;
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             const quantizedTime = Math.floor(ringTime / quantumStep) * quantumStep;
@@ -625,11 +648,11 @@ Introduce yourself in your own voice (Natural Mode).</textarea>
                 }
             }
             
-            drawTracedBoundary();
-            drawBreathingCore(coreTime);
-            
-            ringTime += 0.075;
-            coreTime += 0.02;
+            drawTracedBoundary(ringTime);
+            drawCore(coreTime);
+            const f = 1 + 2 * activityLevel;
+            ringTime += 7.5 * dt * f * activityDirection;
+            coreTime += 5 * dt * f * activityDirection;
             
             requestAnimationFrame(animate);
         }
@@ -653,13 +676,12 @@ Introduce yourself in your own voice (Natural Mode).</textarea>
         
         // Initialize and start
         initColorCache();
-        initBreathingCache();
         
         const initialPoints = getHarmonicPoints(0);
         initialPoints.quantizedTime = 0;
         traceHistory.push(initialPoints);
         
-        animate();
+        animate(0);
     </script>
 </body>
 </html>
