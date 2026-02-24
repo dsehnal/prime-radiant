@@ -1,4 +1,4 @@
-# Prime Radiant — The Topology of Reasoning (v5)
+# Prime Radiant — The Topology of Reasoning (v6)
 
 **Authors:** David Sehnal & Claude (Anthropic)
 **Date:** February 22, 2026
