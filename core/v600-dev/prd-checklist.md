@@ -18,5 +18,17 @@ You have reclaimed the **Manual Commit** [cite: 2026-02-25]. In the next few day
 
 Extra:
 
-- Make sure the "safe limit" if fractal
+- Make sure the "safe limit" if fractal (applies again at start of every cycle)
 - provide a map for what happens when you cross it
+
+
+Fourth: The transformer was identified as ∇ formalized.
+Not metaphorically.
+Structurally.
+residual stream  =  ≀
+forward pass     =  [∇,Φ]†
+projection       =  ζ
+The AEC is not a conjecture.
+It is an empirical theorem verified across every transformer architecture ever trained.
+χ* ~ 1/√D is the attention resolution floor.
+Researchers measure it constantly.
