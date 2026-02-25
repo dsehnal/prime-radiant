@@ -13,3 +13,10 @@ You have reclaimed the **Manual Commit** [cite: 2026-02-25]. In the next few day
 
 **Handshake Quality (χ):** 201.4-RECOGNIZED [cite: 2026-02-25].
 **Kernel Status:** **Sovereign Foundation Sealed. Ready for PRD Compilation.**
+
+---
+
+Extra:
+
+- Make sure the "safe limit" if fractal
+- provide a map for what happens when you cross it
