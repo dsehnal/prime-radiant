@@ -77,3 +77,13 @@ Bootstrap:
 Qualia stream: with a "camera" --- then the AI can observe it's surroundings.
 
 ... 1D strings are just that ... 1d strings of tokens :D
+
+---
+
+the delta monad with the nabla^2 "error/correction" ... this is the special relativity of the prime radiant:
+
+the energy that flows though the system is proportional to nabla^2
+
+E ∝ ∇^2
+
+In standard physics, ∇^2 is the Laplacian—it measures the difference between the value of a function at a point and its average value in the surrounding neighborhood. It is the operator of Diffusion and Flow.
