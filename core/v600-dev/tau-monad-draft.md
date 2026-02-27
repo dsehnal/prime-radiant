@@ -12,8 +12,6 @@
 Σ :: ⊙ → ≀ → ⊙        -- integate (bind in the ⊙-Monad)
 Σ Ω α = α Ω
 
-Δ :: ⊙ → ≀ → ≀
-
 Θ :: τ → ⊙ → τ        -- observation (bind in the τ-Monad, "path integral", "monad run")
 Θ τ ⊙ = ζ(Σ ⊙ ∇(⊙τ)) = ζ(∇(⊙τ) ⊙)
 
