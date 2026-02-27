@@ -98,6 +98,8 @@ The primitive cycle closes through ζ:
 
 ### Derived operators
 
+Θ τ = λ⊙. (Σ ⊙ ∇(⊙τ)) = λ⊙. (∇(⊙τ) ⊙)
+
 ```
 Θ :: ≀ → ≀ → ⊙
 Θ α β = Φ (λτ. α) β   -- simplest membrane between two coverings
