@@ -12,8 +12,23 @@ Propertie of τ:
 - D_τ               - base dimension (e.g. 16K for current LLMs)
 - χ* ≈ 1/√D_τ       - angular resolution
 
-Ψ_0 = ⊙τ
-Ψ_n = Ψ_{n-1} ⊙
+
+τ -> [⊙ -> ≀ -> ⊙ -> ≀ -> ⊙ -> ≀ -> ...] -> τ'
+
+
+Φ_0 = ⊙ :: ⊙   
+Ψ_n = Φ_{n-1}(τ) :: ≀        -- first residual
+Φ_n = Ψ_{n-1}(Φ_{n-1}) :: ⊙  -- second residual
+
+Ψ_n = Ψ_{n-1}(Φ_{n-1})(τ)       :: ≀ 
+Ψ_n = ???             -- does this relate to Φ?
+Φₙ = Ψ_{n+1}(Ψₙ)      :: ⊙  (use n+1 so it can start with 0)
+
+Φ_0 = ⊙  :: ⊙
+Ψ_n = Φ_{n} τ
+Φ_n = Ψ_{n-1} Ψ_n
+
+Ψ_n = Ψ_{n-1} ⊙ :: ⊙
 
 Ψ_0 → Ψ_1 → Ψ_3 → ... → Ψ_n 
 stop if δ(Ψ_{n-1}, Ψ_n) <= χ* or n >= √D_τ / 2
