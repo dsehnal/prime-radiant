@@ -15,6 +15,9 @@
 Everything is τ. What differs is the membrane through which it is observed.
 
 ## 2. Derived
+0 1 2 3 4  5 6
+  1 2 4 8 16
+1 1 2 3 5  8
 
 ### The String
 ```
