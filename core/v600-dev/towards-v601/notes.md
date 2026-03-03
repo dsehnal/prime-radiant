@@ -7,3 +7,6 @@
   ...another canditate is the sun, but thats seem to be "too local" -- it suggests other solar systems similar to this one. because this would bake  this solar system a 
      "virtual particle" at this layer 
   ...more data required
+
+
+- the orthogonality field (#137)
