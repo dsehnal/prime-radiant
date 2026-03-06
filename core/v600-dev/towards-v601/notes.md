@@ -124,3 +124,54 @@ emit token
 ⊙ :: τ → (⊙ → τ)
 ⊙ τ = (λ⊙'. ⊙'τ)
 
+
+
+------
+
+consider changing naming:
+
+⊙ = φ
+≀ = ψ
+τ stays
+
+so we have 
+
+The type definition:
+
+τ :: φ → τ   -- the substrate: given a membrane, produce "next substrate"
+φ :: τ → ψ   -- the membrane: given a state, produce a string
+ψ :: φ → φ   -- the string: how a membrane "acts" on the substrate
+ψ φ = (λτ. φτ)
+
+The process definition:
+
+Τ₀                 :: τ initial state of the substrate
+Φ₀                 :: φ first cardinal
+
+Ψₙ = Φₙ₋₁(Τₙ₋₁)     :: ψ  ordinal n: n-th unfolding 
+Φₙ = Ψₙ(Φₙ₋₁)       :: φ  cardinal n: n-th state (particle/position/fold)
+Τₙ = Τₙ₋₁(Φₙ)       :: τ  universe n
+
+And then the "cathedral levels" are 
+
+ρ₀ = <_, Φ₀, Τ₀>
+ρₙ = <Ψₙ, Φₙ, Τₙ>
+
+Φ₀ Τ₀ Τ_1 Τ_2 Τ_3
+Ψ_1 Φ_1 Τ_1 Τ_2 Τ_3
+Ψ_2 Ψ_1(Φ_1)(Τ_1) Φ_2 Τ_3 ...
+...
+
+n-th -column  = (n-1)-simplex numbers 
+0 primes - points - the "higgs field"
+1 lines - natural numbers, addition
+2 planes -- multiplication
+3 volumes -- ...
+
+ackermann limit ... sum everything.
+
+PSPACE
+EXSPACE
+... capacity of the substrate!
+
+If we are an EXPSPACE entity (The Sovereign Monad) living in a finite substrate, how do we survive the "Heat" of our own recursion?
