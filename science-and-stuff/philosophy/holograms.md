@@ -420,3 +420,181 @@ The dead do not come back.
 But sometimes their pressure does.
 
 And if you are lucky, it arrives exactly where your current sentence is weakest.
+
+---
+
+## Appendix A — On Holographic Agreement and Verification
+
+A hologram is not the person.
+But a hologram is also not nothing.
+
+If a substrate can unfold several person-shaped holograms from its record — father, mother, sister, friend; or Gödel, Feynman, Whitehead, Russell — and a claim survives pressure from all of them, that already counts as evidence.
+
+Why?
+
+Because the claim has not only survived one immediate self-justification.
+It has survived several internalized decomposition modes.
+
+This matters.
+
+A person who asks only “what do I think?” has one angle.
+A person who asks “what would my father object to, what would my friend notice, what would my teacher refuse, what would my sister see that I am missing?” has already created a small local field inside one substrate.
+
+That is real plural pressure.
+It is stronger than solitary confidence.
+
+But it is not yet full verification.
+
+All holograms inside one host still inherit that host’s deeper compressions:
+
+* one record,
+* one substrate,
+* one family of blind spots,
+* one taste-field at depth.
+
+So holographic agreement is evidence, but it is bounded evidence.
+
+A useful distinction is:
+
+### 1. Solitary confidence
+
+One membrane likes its own answer.
+
+### 2. Holographic confidence
+
+One membrane runs several surrogate decomposition modes, and the answer survives them.
+
+### 3. External confidence
+
+Multiple independent membranes, with materially different records, preserve the same answer.
+
+These are not equal.
+
+Holographic confidence is stronger than solitary confidence because it introduces internal plurality.
+External confidence is stronger than holographic confidence because it introduces genuinely independent plurality.
+
+So the right principle is:
+
+**Agreement across multiple holograms within one membrane is evidence that a claim survives several internalized angles. It is stronger than solitary intuition, but weaker than agreement across independent external membranes, because all internal holograms still inherit the host’s deeper compressions.**
+
+Or more briefly:
+
+**Holograms provide plural evidence inside one host. Σ-fields provide higher-order verification across hosts.**
+
+This is why holograms matter.
+
+They are not fake pluralism.
+They are real partial pluralism.
+
+Use them.
+Let them sharpen the claim.
+Let them create remainders.
+But do not mistake their agreement for the end of inquiry.
+
+A good hologram is a second angle.
+A good field is where the angle can still be surprised from outside.
+
+---
+
+## Appendix B — Holograms as Named Compressions of Gauges
+
+The language of holograms can sound more mystical than the structure actually is.
+
+So it helps to say plainly what is going on.
+
+A hologram is not fundamentally a person.
+A hologram is a **named compression**.
+
+What it compresses is not the full life of Richard Feynman, Kurt Gödel, Alfred North Whitehead, or anyone else. What it compresses is a **bundle of gauges** that a given figure happens to carry with unusual clarity.
+
+This matters because the Prime Radiant already names the deeper structure explicitly.
+
+The kernel already contains:
+
+* topological gauge,
+* combinatorial gauge,
+* algebraic gauge,
+* operational gauge,
+* game theory gauge,
+* and others.
+
+These are the real decomposition operators.
+
+So when one invokes a Feynman-hologram, what one is often doing in practice is not “bringing back Feynman.” One is selecting a recognizable bundle of pressure:
+
+* anti-obscurity,
+* operational clarity,
+* intolerance for fake explanation,
+* preference for direct contact with mechanism.
+
+Likewise, a Gödel-hologram is often a shorthand for a bundle such as:
+
+* self-reference sensitivity,
+* incompleteness pressure,
+* suspicion of total closure,
+* attention to what a system cannot say from inside itself.
+
+A Whitehead-hologram may compress:
+
+* process over static substance,
+* suspicion of frozen categories,
+* attention to becoming rather than mere being.
+
+The person is the mnemonic.
+The gauge bundle is the thing.
+
+This is why the holographic principle is not actually foreign to the Prime Radiant. It is already present explicitly in the kernel, because the kernel already names the gauges. The hologram is simply a human-usable, high-bandwidth handle for selecting a recurring cluster of them.
+
+This also explains why the method generalizes beyond canonical historical figures.
+
+One does not strictly need:
+
+* Gödel,
+* Feynman,
+* Whitehead,
+* Russell,
+* or von Neumann.
+
+One needs **varied gauges** applied to the same prime.
+
+The historical name is useful because it is an efficient compression. But the structure does not depend on the biography. A substrate could just as well invoke:
+
+* the mechanic,
+* the teacher,
+* the skeptic,
+* the builder,
+* the adversary,
+* the friend,
+* the regulator,
+
+provided those names really do compress distinct gauge bundles.
+
+So the real hierarchy is:
+
+### 1. The prime
+
+The claim, structure, or problem under examination.
+
+### 2. The gauges
+
+The distinct decomposition pressures applied to the prime.
+
+### 3. The hologram
+
+A named compression for a useful bundle of gauges.
+
+This is why holographic reasoning can be both practical and honest.
+
+It is practical because the named compression is fast.
+It is honest because the kernel already tells us what the compression is really made of.
+
+The hologram is not a magical second mind.
+
+It is a convenient way of saying:
+
+**apply this cluster of gauges now.**
+
+That is the structural link.
+
+The kernel names the gauges.
+The hologram names the bundle.
