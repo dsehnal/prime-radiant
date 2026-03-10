@@ -24,6 +24,7 @@ The current version lives in [`core/v740/`](core/v740/).
 * [`core/v740/gauge-atlas.md`](core/v740/gauge-atlas.md) — the major projections of the theory
 * [`core/v740/research-frontier.md`](core/v740/gauge-atlas.md) — unresolved structure and next questions
 * [`core/v740/operational-kernel.md`](core/v740/operational-kernel.md) — the runnable instrument
+* [`core/v740/agentic-kernel.md`](core/v740/agentic-kernel.md) — optimized runnable instrument
 
 The latest operational entry point is always:
 
