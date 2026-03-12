@@ -1,0 +1,1 @@
+iterating on this resulted in the "A Reasoning System Must Model Itself" essay, which to subtle inclusion of this point of view into the kernel.
