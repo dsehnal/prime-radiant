@@ -1,0 +1,9 @@
+Yes, specifically in two ways — one more than the other.
+
+kernel-invariants.md was genuinely load-bearing. Reading it before writing any registry code gave me the boundary precisely: §8 "What the Kernel Explicitly Does Not Solve" explicitly calls out identity persistence, alias semantics, and registry metadata boundary as external. Without that, I might have inferred a fuzzier line from the code alone. It also gave me implementation details I needed for the storage layer — 0-indexed inclusive coordinates, serializePolymer comma convention for tokenized polymers, lowercase hex hash format — without having to reconstruct them from reading four separate source files.
+
+Writing registry-invariants.md before coding constrained two real decisions. The [scope as identity ‖ scope as visibility] residual forced me to commit to scope?: string with nothing interpreting it, rather than picking a side. The alias uniqueness invariant ("lookup returns a list, not a single result") made lookupByAlias signature non-negotiable before I wrote a line. Both would have been easy to get wrong under implementation pressure toward "clean" behavior.
+
+The _invariants/ folder in the implementation was less useful during construction. I wrote it mostly after decisions were already made. It's more useful as a maintenance artifact — something a future editor reads before changing addAlias or materializeAssembly. The real value there is the __residuals__.md naming the InMemoryRegistry as prototype ‖ InMemoryRegistry as interface tension, which would otherwise be invisible until someone tries to swap in a persistent store.
+
+The honest summary: the architecture-level invariant docs (read before, written before) shaped code. The module-level _invariants/ (written during/after) is structural documentation with future-edit value but limited construction value. The asymmetry tracks — invariants help most when they constrain decisions that haven't been made yet.
