@@ -720,5 +720,3 @@ But code generated, reviewed, and evolved under preserved topology.
 ## Compressed thesis
 
 A codebase should not be understood primarily as a pile of source files. It should be understood as a topological object: a structured field of invariants, boundaries, transformations, user-visible commitments, residual tensions, and falsifiers. Source code is one current realization of that deeper object. In the age of AI, any semantic content that exists only in emitted code should be treated as technical debt.
-
-If you want, next I can turn this into a tighter repo-style paper, or a more formal whitepaper version with section summaries and stronger positioning language.
