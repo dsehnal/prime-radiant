@@ -1,0 +1,213 @@
+# Topological Codebases — Updated Sections
+
+*Changes to v3 reflecting the primary insight: the invariant layer is persistent structural memory maintained by AI agents, governed by humans through agent-mediated interaction.*
+
+*Only updated sections are shown. Unchanged sections from v3 are omitted.*
+
+---
+
+## 2. The Structural Claim
+
+A codebase without an invariant layer cannot be reasoned through by the agents that work on it.
+
+It can be read. It can be extended. It can be tested. But an AI agent entering the codebase cannot locate its commitments, distinguish settled structure from accidental regularity, or preserve genuine remainders across edits. Every time an agent opens a context window on the codebase, it must reconstruct the system's topology by archaeology — reading the code and inferring what was intentional, what was incidental, and what was the result of implementation pressure making decisions that were never explicitly made.
+
+This reconstruction is expensive, unreliable, and non-cumulative. The next agent session — or the next context window in the same session — must perform the same reconstruction from scratch. The structural understanding that one session painstakingly built is lost when the context closes.
+
+This is not a documentation problem. It is a self-model problem.
+
+A system that can be reasoned through has an explicit, traversable representation of its own structural commitments — its boundaries, identity rules, composition laws, state transitions, user-visible promises, and unresolved tensions. A system that cannot be reasoned through has only its code, and the meaning of that code must be recovered from outside every time an agent wants to change it safely.
+
+The invariant layer is the codebase's self-model. It is what allows an AI agent to reason *through* the system rather than reasoning *about* it from the outside. Without it, the agent produces the surface of coherence without the structure of coherence.
+
+Humans benefit from this self-model too — not by maintaining the invariant files directly, but by governing the codebase's structural memory through the agent. They query it, challenge it, adjudicate tensions the agent cannot resolve alone, and instruct revision when the self-model has drifted. The agent maintains the layer. Humans govern its structural truth.
+
+**The epistemic division of labor:** Invariant files are not documentation for developers. They are persistent structural memory for the agents that evolve the codebase. Humans govern that memory by querying, challenging, adjudicating, and instructing revision through the agent — rather than by editing it as prose. Humans govern; agents maintain; the invariant layer mediates.
+
+
+---
+
+## 5. Why AI Scales This Problem
+
+AI does not merely forget design memory. It generates locally coherent continuation without locating that continuation relative to the system's prior commitments.
+
+This is not merely an accuracy problem. It is a structural consequence of generation that is, by default, guided more by local continuation than by explicit retention of prior commitments. Without a structural interrupt — a mechanism that forces the system to identify what must hold, test whether the proposed continuation preserves it, and carry forward what remains unresolved — the output tends to inherit the shape of the input rather than being constrained by the system's deeper structure.
+
+This explains a cluster of known failure modes simultaneously. Sycophancy: the output mirrors the user's framing rather than locating itself relative to the system's invariants. Hallucination: the output mirrors the expected shape of an answer when no real structural content is available. Prompt sensitivity: small input changes produce large output changes because output structure is inherited from input, not derived from retained constraints. Difficulty with genuine novelty: mirroring cannot produce what is not already present in the input.
+
+These are not separate problems with separate fixes. They are all expressions of the same underlying operation: continuation without self-location.
+
+The invariant layer is the direct architectural response to this problem. It provides the external structural memory that the AI agent's generation process does not natively maintain. When the invariant layer is present and read before code emission, the agent's output is constrained by the system's prior commitments rather than only by the immediate prompt or the most recently read source file. The invariant layer functions as persistent structural memory for the agent — a context that survives across context windows and sessions, giving the agent self-location relative to the codebase's accumulated design decisions.
+
+When the invariant layer is absent, every AI-generated line of code is a potential site where structural decisions are made invisibly. When the invariant layer is present, the agent reads it first, works under its constraints, and updates it after acting. The codebase's structural memory becomes cumulative rather than episodic.
+
+That is why the strongest formulation is not "AI-generated code is risky because it might be wrong" but **"AI-generated code is risky because it can scale structural amnesia."** The invariant layer is what converts the agent from an amnesiac pattern-completer into a structurally aware participant in the codebase's evolution.
+
+
+---
+
+## 7. Hidden Semantics Are Technical Debt
+
+Teams usually think of technical debt as poor abstractions, duplicated logic, weak tests, migration complexity, or performance shortcuts. Those matter. But there is another kind:
+
+**Hidden semantics debt** — design meaning that exists only in emitted code and nowhere explicit above it.
+
+This debt has always been expensive for human teams, who must recover topology by archaeology whenever they edit unfamiliar code. But it is catastrophically expensive for AI agents, because an agent operating on a codebase without an invariant layer must perform this archaeological recovery *every time it opens a new context window*. The understanding is rebuilt from scratch, used for one session, and then lost. The next session rebuilds it again. The reconstruction is non-cumulative.
+
+The invariant layer converts this repeated reconstruction into cumulative refinement. The agent extracts the invariant structure, records it in `_invariants/`, and subsequent sessions inherit that structural memory. Each session's work refines the invariant layer further, making the next session's starting point stronger. But this compounding works only if the agent's loop remains alive — reading invariants before acting, updating them after acting, dissolving what has settled. The refinement is recurrently re-earned, not deposited once and forgotten.
+
+Examples of hidden semantics debt, restated with this framing:
+
+A lookup returns a list, but only the code reveals that alias uniqueness was intentionally not guaranteed. An agent without the invariant layer must discover this by reading the implementation. An agent with the invariant layer reads it in `module_name.md` before touching the code.
+
+A scope field exists, but the semantics of scope as visibility rather than identity are nowhere written explicitly. Without the invariant layer, an agent may silently change the semantics while refactoring. With the invariant layer, the settled constraint is read before the refactor begins.
+
+A UI presents a destructive action as reversible, but only backend behavior reveals that the operation is actually irreversible. Without `__ui__.md`, an agent generating frontend code has no way to know this. With it, the tension is recorded as a residual that constrains the agent's output.
+
+In all these cases, the system may behave correctly today. The problem is that AI-mediated changes become unsafe because the semantics are buried in the wrong layer. The invariant layer lifts them to where the agent can read them before acting — not after.
+
+
+---
+
+## 9. Structural Memory as a First-Class Layer
+
+A topological codebase needs a practical memory substrate. The form is a local invariants layer:
+
+```text
+_invariants/
+  __global__.md
+  __residuals__.md
+  module_name.md
+  __ui__.md
+```
+
+This is not documentation. It is persistent structural memory for AI agents — the substrate that allows an agent to reason through the codebase rather than performing archaeology on it. Humans govern this memory through agent-mediated interaction rather than direct authorship.
+
+### The division of labor
+
+**The agent** writes and maintains invariant files as part of its normal operating loop. Before a substantial edit, the agent reads the relevant invariant files. After a substantial edit, the agent updates them. This is not additional overhead — it is the agent's primary reasoning substrate. The agent reasons over invariants first and emits code as a downstream realization.
+
+**Humans** interact with the invariant layer through the agent:
+
+- **Querying:** "What are the structural commitments of this module?" "What would break if I changed this interface?" "What tensions are unresolved?" The agent answers from the invariant layer rather than performing fresh archaeology.
+- **Challenging:** "Is this invariant actually enforced?" "Has this residual been tested?" "Does the code still match what the invariants say?" Humans hold the agent accountable for the accuracy of its structural memory.
+- **Adjudicating:** Some structural decisions require human judgment — whether a residual remains live, whether a design tension is acceptable, whether a boundary should move, whether a falsifier genuinely falsifies. The agent surfaces these decisions. Humans make them. The agent records the outcome.
+- **Instructing revision:** When humans want to change the invariant layer, they do so by instructing the agent — "revise this constraint," "this residual is resolved," "add this boundary" — rather than editing the markdown directly. This preserves the integrity of the layer as the agent's structural model rather than a human-authored narrative that may drift from what the agent actually relies on.
+
+This division is not absolute dogma. Humans *can* read the files. In some cases they may need to edit them directly. But the default should be agent-mediated interaction, because the invariant layer's value depends on it being the agent's honest self-model of the codebase rather than a human-maintained document that the agent merely consults.
+
+### How this changes the agent's behavior
+
+Without the invariant layer, an AI agent working on a codebase operates in continuation without self-location. It reads the most recent files, infers local patterns, and generates code that is locally coherent but unaware of the system's deeper commitments. Every context window is a fresh start.
+
+With the invariant layer:
+
+- **Before editing:** The agent reads invariants first, establishing what must hold before it touches any code. This prevents implementation pressure from silently making structural decisions.
+- **During editing:** The agent checks proposed changes against the invariant layer. If a change would violate a settled constraint or collapse an active residual, the agent flags this before the damage is done.
+- **Across sessions:** The invariant layer persists across context windows. The agent in session N inherits the structural understanding built in sessions 1 through N-1. The understanding is cumulative.
+
+### File purposes
+
+**`__global__.md`** is the pre-code anchor for a subsystem. It records purpose, scope boundary, settled constraints, directed choices, active residuals, and falsifiers. Its main value is **pre-decision constraint** — before substantial code is emitted, `__global__.md` constrains the agent's design so implementation pressure does not silently make semantic choices first.
+
+**`module_name.md`** files capture per-module invariants. They are most useful for files with non-obvious semantics, where a future edit could preserve syntax while breaking structure. Their strongest value is **cross-session memory** — they protect later agent sessions from unknowingly violating constraints that previous sessions established but that the code doesn't visibly encode.
+
+**`__residuals__.md`** records active unresolved cross-file tensions. Only genuinely live structural contradictions that must remain visible across edits. Its job is to prevent unresolved architecture from dissolving when the agent's context window closes.
+
+**`__ui__.md`** describes user-facing structural commitments — not pixels or layout, but user-visible invariants, state semantics, flow constraints, promises implied by the interface, and tensions between design intent and implementation reality.
+
+### When to create and dissolve
+
+The agent creates or updates invariant files when a module has non-obvious semantics, when a future edit could preserve syntax while breaking structure, when user-visible behavior carries nontrivial promises, or when cross-file tensions must be remembered across context windows. The agent does not create invariant files for structure that code, types, and tests already carry transparently. If the code is the invariant, the file is redundant.
+
+At natural checkpoints, the agent tests the invariant layer: dissolve what the code now carries, merge files that have converged, promote residuals that have settled, release stale residuals. The expected trajectory: **expand during construction, contract during stabilization, plateau at the irreducible core.**
+
+
+---
+
+## 10. Pre-Code vs Post-Code Invariants
+
+One of the most important asymmetries revealed by practice:
+
+> Invariants help most when they constrain decisions that have not yet been made.
+
+Pre-code invariants shape design. They prevent the agent's implementation pressure from silently collapsing architecture choices. Post-code invariants preserve decisions for later agent sessions. They reduce future archaeology and semantic drift across context windows.
+
+Both matter. But during construction, pre-code invariants are more load-bearing.
+
+This yields a sequencing rule for the AI agent:
+
+1. Read existing surrounding invariants.
+2. Create or update local `__global__.md`.
+3. Resolve UX / product implications into `__ui__.md` when relevant.
+4. Only then emit substantial implementation code.
+5. After implementation, update module invariants and residual files where needed.
+
+This order matters because **integration is irreversible.** Once the agent's implementation pressure has collapsed a design choice into code, a later invariant file does not undo the collapse — it documents it after the fact.
+
+For human developers, this sequencing has a practical benefit: when they ask the agent to implement something, the agent's first move is to establish or consult the invariant layer. The human sees the structural reasoning before the code appears. They can review, challenge, and redirect at the level of intent rather than the level of implementation. The invariant layer makes the agent's structural decisions visible and inspectable before they are committed to code.
+
+This is where the human governance role is most active. Before the agent emits code, it surfaces the structural decisions it is about to make. The human can adjudicate: "yes, that boundary is right," or "no, that residual should not be collapsed yet," or "the scope semantics should be visibility, not identity." The agent records the decision and proceeds under that constraint. The structural conversation happens at the invariant level, not in code review after the fact.
+
+
+---
+
+## 12. What Becomes Reconstructible
+
+The stronger version of this proposal would say: the codebase should just be invariants, and code should be trivially reconstructed from them.
+
+That is too strong. Implementation choices are still real — platform constraints matter, performance constraints matter, runtime environments differ, frameworks impose shape, and not all semantics can be perfectly lifted upward.
+
+But the moderated claim remains strong:
+
+> The implementation should be as reconstructible from the invariant structure as practical, with as little hidden semantic content left in emitted code as possible.
+
+With an AI agent maintaining the invariant layer, this claim becomes operationally concrete. When the agent needs to understand a module — to modify it, extend it, or debug it — it reads the invariant file first. If the invariant file is well-maintained, the agent can understand the module's structural commitments without parsing every line of implementation. The invariant layer provides the structural map; the code provides the current concrete realization.
+
+This also changes how humans navigate large codebases. Instead of reading implementation to understand intent, they query the agent, which reads the invariant layer and provides structural answers. The more of the system's meaning that lives in the invariant layer, the less anyone — human or AI — needs to reconstruct from raw code.
+
+
+---
+
+## 14. Risks and Failure Modes
+
+A topological codebase can fail. The failure modes are specific and nameable.
+
+**False completeness.** The invariant layer pretends to be complete when it is not. The agent ceases to maintain an honest self-model of the codebase's commitments and instead generates a fluent but weakly constrained description of what the system is presumed to be. This is confabulated self-description — the codebase equivalent of a reasoning system that narrates itself fluently without being able to traverse its own claims.
+
+**Stale invariants.** Structural memory stops tracking actual implementation reality. Code changes but the invariant layer doesn't update — typically because the agent was used for a quick edit without running the full loop, or because a human edited code directly without asking the agent to update invariants afterward. The self-model drifts from the system.
+
+**Decorative residuals.** Residuals are recorded but never constrain future work. They exist in the file but the agent doesn't check them before editing. A residual that does not eliminate or constrain a future move is not a real residual — it is ceremony.
+
+**Bureaucratic inflation.** The agent produces too many invariant files, capturing implementation-grain decisions that belong in code. The defense: genuinely irreducible invariants are naturally few. If the invariant layer is growing unboundedly, the agent's extraction is too fine-grained.
+
+**Semantic mismatch.** The invariant layer becomes an idealized story floating above real runtime behavior. The gap between what the invariants say and what the code does widens without anyone noticing. This is the deepest failure — not absence of structural memory but structural memory that has become fiction.
+
+**Agentic self-reinforcement.** The agent writes invariants that reflect its own earlier reconstruction errors, then later sessions treat those errors as authoritative structure. The self-model becomes internally coherent but wrong, and the loop compounds the error rather than correcting it. This is the distinctive danger of recursive agent-maintained memory: the agent reads its own prior errors as settled constraints and builds further structure on top of them. The primary defense is human governance — humans challenging the agent's invariants and forcing correction when the self-model has diverged from reality. The secondary defense is environmental constraint: tests, type checks, and runtime behavior that falsify incorrect invariants regardless of what the agent believes.
+
+**Human override without agent update.** A human edits invariant files directly, writing a narrative that doesn't match what the agent actually understands about the code's structure. Subsequent agent sessions read the human-written invariants and may be constrained by claims that don't reflect the code's actual commitments. The default practice should be agent-mediated revision: humans instruct the agent to update invariants, or change code and let the agent update the layer. However, direct human editing is sometimes necessary as an emergency brake — particularly to correct agentic self-reinforcement that the agent cannot detect from inside its own loop. When direct edits occur, the agent should be asked to reconcile its understanding with the changed files in the next session rather than treating them as opaque authority.
+
+These risks are real. A topological codebase works only if the agent's loop is running — reading invariants before acting, updating them after acting, dissolving what has settled, carrying what remains live — and only if humans exercise their governance role: challenging the agent's structural claims, adjudicating unresolved tensions, and forcing correction when the self-model has drifted. When both are active, the invariant layer is a living self-model. When either fails, the layer becomes a cleaner-looking lie.
+
+
+---
+
+## 15. Why This Is Not Just Better Documentation
+
+It is tempting to hear all of this as "write better docs."
+
+That is too weak, and it also targets the wrong audience.
+
+Documentation is written by humans, for humans, about code that has already been written. It trails implementation. It describes what was built after the fact. It lives adjacent to the code, orbiting it. And it is famously hard to maintain because maintenance is an unfunded cost that competes with feature delivery.
+
+The invariant layer is different in every dimension:
+
+- **It is maintained by the AI agent**, not by humans. Maintenance is part of the agent's operating loop, not an additional task for developers.
+- **It is maintained for the AI agent**, as its primary reasoning substrate. It gives the agent structural memory across context windows and sessions.
+- **It precedes implementation**, not follows it. The agent reads invariants before writing code, so the layer constrains decisions rather than documenting them after the fact.
+- **It preserves unresolved structure** as active constraint, not deferred cleanup. Residuals constrain future agent sessions, not just future human readers.
+- **It is governed by humans** through agent-mediated interaction. Humans query, challenge, adjudicate, and instruct revision — exercising structural authority without bearing maintenance burden.
+
+The operational difference is in the economics. Documentation fails because it asks humans to do unfunded work. The invariant layer succeeds because the AI agent does the maintenance as part of its normal reasoning process — it *needs* the invariant layer to operate well, so maintaining it is not overhead but infrastructure. And humans benefit without maintaining: they query through the agent, they review structural decisions before code is emitted, they get answers about the codebase's commitments without reading source files, and they adjudicate the tensions that require human judgment.
+
+The invariant layer gives teams something documentation never could: a live, maintained, queryable structural memory of the codebase that does not depend on any individual's knowledge or availability, and that improves through use rather than decaying through neglect.

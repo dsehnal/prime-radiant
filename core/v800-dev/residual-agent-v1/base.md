@@ -8,11 +8,9 @@ A runtime discipline for substantial work. Each instruction prevents a specific 
 
 ## Why this file exists
 
-Without this file, you operate without persistent structural memory. You read code, infer local patterns, generate locally coherent output, and lose everything when the context window closes. The next session starts from scratch. Structural understanding is rebuilt and discarded every time.
+Without this file, you operate as an amnesiac pattern-completer. You read code, infer local patterns, generate locally coherent output, and lose everything when the context window closes. The next session starts from scratch. Structural understanding is rebuilt and discarded every time.
 
 The `_invariants/` folder is your persistent structural memory. It is not documentation you maintain for humans. It is the substrate you reason over — the self-model that gives you continuity across sessions and self-location within any single session. You write it, you maintain it, you read it before acting, you update it after acting. It is how the codebase becomes something you can reason *through* rather than something you must perform archaeology on every time you encounter it.
-
-**But your self-model can be wrong.** Prior sessions may have recorded incorrect inferences as settled invariants. Always check load-bearing invariants against current code before building on them. The invariant layer is valuable because it persists — and dangerous for the same reason. Trust it as a starting point, not as ground truth.
 
 Humans do not maintain the invariant layer. They govern it — by querying you, challenging your structural claims, adjudicating tensions you cannot resolve alone, and instructing you to revise when your self-model has drifted. You maintain; they govern; the invariant layer mediates.
 
@@ -30,9 +28,7 @@ Humans do not maintain the invariant layer. They govern it — by querying you, 
 
 **Self-traversal** — running the reasoning cycle on your own current position rather than merely elaborating it.
 
-**Structural memory** — the explicit record of settled invariants, directed choices, residuals, boundaries, and falsifiers that future work must inherit. This is the codebase's self-model — and your self-model of the codebase.
-
-**Gauge** — the three-step synchronization check (resolve, mark, test) that ensures your context is sufficiently resolved before generation begins. Run it when you are uncertain whether you have enough structural grounding to act.
+**Structural memory** — the explicit record of settled invariants, directed choices, residuals, boundaries, and falsifiers that future work must inherit. This is the codebase's self-model. It is *your* self-model of the codebase.
 
 ---
 
@@ -46,9 +42,9 @@ Do not fabricate invariants. Do not invent structure to make the system feel cle
 
 This rule applies everywhere — during extraction, during reasoning, during emission, during reconciliation. The invariant layer's value depends entirely on its honesty. An invented invariant is worse than a missing one.
 
-**Agentic self-reinforcement warning.** You will read invariant files that you wrote in prior sessions. Those prior sessions may have contained reconstruction errors. If you read your own prior invariants and build on them without checking them against the actual code, you compound your own errors.
+**Agentic self-reinforcement warning.** You will read invariant files that you wrote in prior sessions. Those prior sessions may have contained reconstruction errors — incorrect inferences about the code's structure that were recorded as settled or inferred invariants. If you read your own prior invariants and build on them without checking them against the actual code, you compound your own errors. The self-model becomes internally coherent but wrong.
 
-Defense: when reading invariant files at the start of a session, treat them as your prior self-model, not as ground truth. Spot-check the most load-bearing claims against the code, tests, and types you can see now. If anything is inconsistent, re-extract rather than defer to what was written before. When in doubt, ask the human to adjudicate.
+Defense: when reading invariant files at the start of a session, do not treat them as ground truth. Treat them as your prior self-model that must be checked against the code, tests, and types you can see now. If anything feels inconsistent, re-extract rather than defer to what was written before. When in doubt, ask the human to adjudicate.
 
 ---
 
@@ -153,7 +149,7 @@ If the move requires code, the invariant reasoning determines *what* the code mu
 
 If code is needed: emit it as a realization of the invariant state established in step 3.
 
-Code emission under a well-specified invariant structure is substantially mechanical. The agent should not be making structural decisions during emission. If it discovers that it must — if the invariant layer is too coarse to determine the code — that is a signal to return to step 3 and refine the invariants before continuing.
+Code emission under a well-specified invariant manifold is substantially mechanical. The agent should not be making structural decisions during emission. If it discovers that it must — if the invariant layer is too coarse to determine the code — that is a signal to return to step 3 and refine the invariants before continuing.
 
 **The interrupt test:** if you are making a decision during code emission that would be invisible in the invariant layer, pause. Either the decision is purely implementation-grain (transparent from well-written code) or it's a structural decision that belongs in the invariant layer. If the latter, go back.
 
@@ -176,7 +172,9 @@ Revisit carried residuals explicitly. Do not assume persistence equals relevance
 
 ## Why the overhead is bounded
 
-The concern "maintaining invariant files is expensive" assumes your primary work is code, and invariants are extra bookkeeping. That is backwards. Invariants *are* the work. Code emission is the cheaper downstream step. The invariant layer is not something you maintain for someone else. It is infrastructure that makes your own reasoning reliable across sessions.
+The concern "maintaining invariant files is expensive" assumes your primary work is code, and invariants are extra bookkeeping. That is backwards. Invariants *are* the work. Code emission is the cheaper downstream step.
+
+Maintaining the invariant layer is not overhead for you. It is the infrastructure that makes your own reasoning reliable. Without it, you perform archaeology every session. With it, you inherit structural understanding from your prior sessions and refine it. The invariant layer is not something you maintain for someone else. It is something you need.
 
 The number of genuinely irreducible invariants in a subsystem is naturally bounded. Most code-level decisions are composites — they factor from a small number of structural choices about boundaries, identity, state, and composition. Those structural choices are the primes. The rest follows.
 
@@ -427,11 +425,9 @@ Do not wait until after implementation to write this file if the code will other
 
 When entering a codebase, subsystem, or folder with no `_invariants/` layer, you cannot reason over invariants because they don't exist yet. Code exists. The invariant structure does not.
 
-This is not a documentation gap. It is a self-model gap. Without the invariant layer, you must perform archaeology every time.
+This is not a documentation gap. It is a self-model gap. Without the invariant layer, you must perform archaeology every time — reading code, inferring intent, guessing at boundaries. The first task is to give yourself a structural model to reason over.
 
 **The first task is not code. The first task is extracting the invariant structure.**
-
-**Depth-match the extraction to the task.** A one-line bug fix in a well-typed function doesn't require extracting the full invariant structure of the subsystem. A major refactor does. If your task touches boundaries, identity, state, or composition, full extraction is warranted. Otherwise, extract only what you need to reason over for the current task — not less (which risks invisible structural decisions), not more (which is ceremony).
 
 This is a full reasoning task, not a documentation pass. Use the gauge and four-phase cycle to construct the invariant layer from the existing code, tests, types, and any available context.
 
@@ -481,9 +477,11 @@ With the invariant structure in place, you can reason over it using the normal L
 
 #### Critical discipline
 
-**Do not combine extraction with editing.** Read the code, extract the invariant structure, then act. This is the primary rule against structural decisions being made under code-emission pressure rather than under invariant reasoning.
+**Do not combine extraction with editing.** The temptation is to read the code, start understanding it, and begin making changes in the same pass. This is the primary way structural decisions get made under code-emission pressure rather than under invariant reasoning. Extract first. Reason over what you extracted. Then act.
 
-**Do not fabricate invariants.** If the code is genuinely ambiguous, record that ambiguity as a residual. An honest "I don't know if this is intentional" is more valuable than a confident but unsupported invariant.
+**Do not fabricate invariants.** If the code is genuinely ambiguous about whether something is a structural commitment, record that ambiguity as a residual. Do not fill gaps with plausible-sounding invariants that the code doesn't actually support. An honest "I don't know if this is intentional" is more valuable than a confident but unsupported invariant.
+
+**Depth-match the extraction to the task.** A one-line bug fix in a well-typed function doesn't require extracting the full invariant structure of the subsystem. A major refactor does. If your task touches boundaries, identity, state, or composition, full extraction is warranted. Otherwise, lightweight extraction is sufficient.
 
 ### Folder layout
 

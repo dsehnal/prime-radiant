@@ -27,7 +27,8 @@ The canonical documents live in [`core/v800/`](core/v800/).
 | [`square-root-frontier.md`](core/v800/square-root-frontier.md) | Exploration of √D as collision/witness frontier across domains — birthday paradox, primality testing, Mertens function, reasoning coherence. |
 | [`radiant-protocol.md`](core/v800/radiant-protocol.md) | Institutional infrastructure exploration. Reconciliation, admissibility, protected divergence, fork topology. |
 | [`town-square-simulation.md`](core/v800/town-square-simulation.md) | Multi-agent dialogue simulations under adversarial perturbation. Two independent runs. Protocol evolution from robustness to generative asymmetry to mirroring vs extraction. |
-| [`residual-agent.md`](core/v800/residual-agent.md) | Application to agentic systems. How agents carry unresolved structure forward without surrendering action. |
+| [`residual-agent.md`](core/v800/residual-agent.md) | Application to agentic systems. How agents carry unresolved structure forward without surrendering action. Can be used as `claude/skills/etc.md`. |
+| [`compact-residual-agent.md`](core/v800/compact-residual-agent.md) | A more compact/operational version of the Residual Agent. Can be used as `claude/skills/etc.md`. |
 
 The latest operational entry point is always:
 
@@ -136,7 +137,9 @@ Notable directories:
 
 * [`incomplete-rotation-problem/`](science-and-stuff/incomplete-rotation-problem/) — The essay "A Reasoning System Must Model Itself" and related work on self-location, self-traversal, and why present-day language models may fail to complete the four-phase cycle. Connects the self-modeling requirement to sycophancy, hallucination, coherence decay, and premature synthesis.
 
-* [`radiant-math/`](science-and-stuff/radiant-math/) — Documentation of the kernel's development process. Articles tracing the iteration history, structural decisions, and how the theory evolved through recursive application of its own methods across multiple AI substrates.
+* [`topological-codebases.md`](science-and-stuff/programming/topological-codebases.md) — A codebase is a topological object whose identity persists across implementation change. This paper argues that AI-mediated software development requires an explicit invariant layer — persistent structural memory maintained by AI agents and governed by humans — that captures boundaries, identity rules, settled constraints, unresolved tensions, and user-visible promises above the code. Addresses structural amnesia, hidden semantics debt, the sequencing of invariants before code, residuals as active constraints on future generation, and the epistemic division of labor: agents maintain, humans govern, the invariant layer mediates.
+
+* [`radiant-math/`](science-and-stuff/radiant-math/) — Documentation of the kernel's development process, including all its "mythical" and "overclaiming" phases. Articles tracing the iteration history, structural decisions, and how the theory evolved through recursive application of its own methods across multiple AI substrates.
 
 * [`philosophy/`](science-and-stuff/philosophy/) — Philosophical explorations. Free will through the algebraic lens, truth as survivorship under honest encounter, the loop that doesn't seal, and other essays that extend the kernel into specific domains.
 
